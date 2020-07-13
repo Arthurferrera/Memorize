@@ -15,10 +15,9 @@ struct ContentView: View {
                 CardView(isFaceUp: true)
             }
         }
-            .padding()
-            .foregroundColor(Color.orange)
-            .font(Font.largeTitle)
-        
+        .padding()
+        .foregroundColor(Color.orange)
+        .font(Font.largeTitle)
     }
 }
 
