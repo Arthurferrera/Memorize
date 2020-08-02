@@ -17,7 +17,15 @@ struct MemoryGame<CardContent> {
     
     init(numberOfPairOfCards: Int) {
         cards = Array<Card>()
-        
+    }
+    
+    init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+        cards = Array<Card>()
+        for pairIndex in 0..<numberOfPairsOfCards {
+            let content = cardContentFactory(pairIndex)
+            cards.append(Card(isFaceUp: false, isMatched: false, content: content))
+            cards.append(Card(isFaceUp: false, isMatched: false, content: content))
+        }
     }
     
     struct Card {
@@ -26,3 +34,4 @@ struct MemoryGame<CardContent> {
         var content: CardContent
     }
 }
+ 
