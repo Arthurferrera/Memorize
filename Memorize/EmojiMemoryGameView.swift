@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    var viewModel: EmojiMemoryGame
+    @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-        HStack() {
+        HStack {
             ForEach(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     self.viewModel.choose(card: card)
@@ -27,7 +27,7 @@ struct EmojiMemoryGameView: View {
 }
 
 struct CardView: View {
-    let card: MemoryGame<String>.Card
+    var card: MemoryGame<String>.Card
     
     var body: some View {
         ZStack {
